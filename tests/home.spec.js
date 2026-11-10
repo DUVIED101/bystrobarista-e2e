@@ -12,9 +12,9 @@ describe('Home page (EN)', function () {
   });
 
   it('shows the main headline', async function () {
-    expect(await this.home.h1.innerText()).to.equal(
-      'Shifts for baristas. Baristas for coffee shops.',
-    );
+    // the headline wraps with a <br>, so collapse whitespace before comparing
+    const text = (await this.home.h1.innerText()).replace(/\s+/g, ' ').trim();
+    expect(text).to.equal('Shifts for baristas. Baristas for coffee shops.');
   });
 
   it('renders every main section', async function () {
