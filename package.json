@@ -1,0 +1,23 @@
+{
+  "name": "bystrobarista-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "End-to-end tests for the BystroBarista website, written with Playwright and Mocha.",
+  "scripts": {
+    "test": "mocha",
+    "test:chromium": "BROWSER=chromium mocha",
+    "test:firefox": "BROWSER=firefox mocha",
+    "test:webkit": "BROWSER=webkit mocha",
+    "test:headed": "HEADED=1 mocha",
+    "test:report": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=index,quiet=true"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^10.8.2",
+    "mochawesome": "^7.1.3",
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
